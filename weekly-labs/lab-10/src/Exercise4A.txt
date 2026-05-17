@@ -1,0 +1,5 @@
+1) What is the size of the set? 4, a set doesn't allow duplicate elements 
+
+2) Explain why the order of the output is not fixed. Becuase HashSet doesn't preserve order. It stores elements based on hashing.
+
+3) What changes if HashSet is replaced with TreeSet? Elements become sorted automatically in ascending order
