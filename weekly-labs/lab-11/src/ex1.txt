@@ -1,0 +1,41 @@
+1) Q1. A hash table has capacity N = 100 and currently stores 73 entries. 
+What is the load factor α? At whatload factor is it typically recommended 
+to resize, and why?
+
+Ans: Load factor measures the ration of stored entries to total capacity. 
+It is 73/100= 0.73. Resizing is typically done when the load factor 
+exceeds 0.75 because as α increases, more collisions occur and operations 
+like search/delete/insert become slower, so performance moves away from O(1).
+
+
+
+2) Q2. Using the division compression function with N = 11, compute h(k) 
+for each key: 45, 99, 121, 0, 33.
+
+Ans: h(k) = k mod N
+for 45, h(45) = 45 % 11 = 1
+for 99, h(99) = 99 % 11 = 0
+for 121, h(121) = 121 % 11 = 0
+for 0, h(0) = 0 % 11 = 0
+for 33, h(33) = 33 % 11 = 0
+ 
+
+
+3) Q3. Using the MAD compression function h(k) = |3k + 7| mod 11, compute h(k) 
+for keys 5, 14, 22.
+
+Ans: h(k) = |3k + 7| mod 11
+for 5, h(5) = |22| mod 11 = 0
+for 14, h(14) = |49| mod 11 = 5
+for 22, h(22) = |73| mod 11 = 7
+
+
+
+4) Why should N be a prime number when using the division compression function? 
+Give a concrete counter-example showing increased collisions when N is not prime.
+
+Ans: if N is not prime, patterns in the keys (like multiples) can cause many keys 
+to hash to the same index. Choosing N as a prime number helps in distributing keys
+more uniformly and reduces collisions. For example take N=4, so if we have some 
+values 40, 44, 48, then 40 mod 4 = 0, 44 mod4 = 0, 48 mod 4 = 0. All of them hashed 
+to the same index. This leads to many collisions. 
